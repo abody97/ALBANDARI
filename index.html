@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموقع الشخصي للبندري العنزي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- إضافة الخط الجميل -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #ffe4e1;
+            color: #4a235a;
+            padding-top: 4rem;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #ffafbd, #ffc3a0), url('path/to/your/image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 70vh; /* تقليل الارتفاع */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            background-attachment: fixed;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            position: relative;
+            font-weight: 700;
+            font-size: 3rem; /* تقليل حجم النص */
+            z-index: 1;
+        }
+        header p {
+            position: relative;
+            font-size: 1.2rem; /* تقليل حجم الفقرة */
+            margin-top: 10px; /* تقليل المسافة بين النصوص */
+            z-index: 1;
+        }
+        .navbar {
+            background: rgba(74, 35, 90, 0.8);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.8rem; /* تقليل الحواشي للـ navbar */
+            transition: background-color 0.3s;
+        }
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem; /* تقليل حجم الخط في الروابط */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ff69b4 !important;
+        }
+        /* تقليل المسافات بين الأقسام */
+        section {
+            padding: 20px 0; /* تقليل الحواشي العمودية بين الأقسام */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 65vh; /* تقليل الارتفاع لكل قسم */
+            text-align: center;
+        }
+        .section-title {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px; /* تقليل المسافة أسفل العنوان */
+            color: #c2185b;
+            font-size: 2rem; /* تقليل حجم العنوان */
+        }
+        .container-box {
+            background-color: #fff0f5;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* تقليل الحواشي الداخلية */
+            margin-bottom: 20px; /* تقليل المسافة بين البطاقات */
+            max-width: 800px;
+        }
+        #about img {
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 150px; /* تقليل حجم الصورة */
+            margin-bottom: 15px; /* تقليل المسافة أسفل الصورة */
+        }
+        footer {
+            background-color: #4a235a;
+            color: #fff;
+            padding: 20px 0; /* تقليل الحواشي للفوتر */
+            text-align: center;
+        }
+        .footer-icons {
+            margin-top: 10px; /* تقليل المسافات بين الأيقونات */
+        }
+        .footer-icons a {
+            color: white;
+            margin-left: 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .footer-icons a:hover {
+            color: #ff69b4;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background-color: #e91e63;
+            color: white;
+            border-radius: 50%;
+            width: 50px; /* تقليل حجم زر الواتساب */
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        /* تأثير تمرير ناعم */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">موقع البندري</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">من أنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">المهارات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">المشاريع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">تواصل</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-white d-flex justify-content-center align-items-center">
+        <div class="container">
+            <h1>مرحبًا بكم في موقعي الشخصي</h1>
+            <p class="lead">أنا البندري، متخصصة في نظم المعلومات الإدارية ومهتمة بالتقنية</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container-box">
+            <img src="/YYE.png" class="img-fluid" alt="صورة شخصية للبندري محمد الشملاني العنزي" loading="lazy">
+            <h2>من أنا</h2>
+            <p>مرحبًا! اسمي البندري محمد الشملاني العنزي. حاصلة على بكالوريوس في نظم المعلومات الإدارية من جامعة حائل. لدي خبرة في إدارة المنتج وتحليل الأعمال، عملت في وزارة الموارد البشرية والتنمية الاجتماعية...</p>
+            <a href="https://drive.google.com/drive/folders/17U4SGw2gi4p5rqM4iuk3kce2xLIcZNao" class="btn btn-primary mt-3" target="_blank">عرض سيرتي الذاتية</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container-box">
+            <h2 class="section-title">المهارات</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-language"></i> إتقان اللغة الإنجليزية</h5>
+                    <p>أجيد الإنجليزية ولدي مهارات تواصل قوية.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-tasks"></i> التخطيط والتنظيم</h5>
+                    <p>مهارة في تنظيم المهام والاجتماعات والأحداث.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-brain"></i> التفكير التحليلي وحل المشكلات</h5>
+                    <p>قدرات قوية في التفكير التحليلي وحل المشكلات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container-box">
+            <h2 class="section-title">المشاريع</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">مشروع 1: تصور البيانات باستخدام Excel وTableau</h5>
+                            <p class="card-text">استخدام بيانات الطيران لإنشاء تصورات باستخدام Excel وTableau للمساعدة في اتخاذ القرارات.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">مشروع 2: تحليل الأداء المالي</h5>
+                            <p class="card-text">تحليل الأداء المالي للشركات المدرجة في NYSE وإنشاء بيانات دخل وقياسات مالية باستخدام Excel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">مشروع 3: تصميم واجهة مستخدم لتطبيق جوال</h5>
+                            <p class="card-text">تصميم واجهة مستخدم وتجربة المستخدم لتطبيق جوال باستخدام Figma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 البندري محمد الشملاني العنزي. جميع الحقوق محفوظة.</p>
+            <p>تواصل معي عبر:</p>
+            <div class="footer-icons">
+                <a href="https://www.linkedin.com/in/albandari-alenzi" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:Enzi.albandarym@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/0550578167?text=مرحبًا%20البندري،%20أرغب%20في%20مناقشة%20مشروع!" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>
